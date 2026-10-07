@@ -1,0 +1,9 @@
+[extend]
+useDefault = true
+
+[[rules]]
+id = "db-connection-string-password"
+description = "Password inside a database connection URL"
+regex = '''(?i)(?:postgres(?:ql)?|username|password|mysql|mongodb(?:\+srv)?|redis)://[^:\s/]+:([^@\s/]{6,})@|(AKIA[0-9A-Z]{16}|(?i)password\s*=\s*["']([^"']+)["'])'''
+secretGroup = 1
+keywords = ["postgres", "mysql", "mongodb", "redis", "username", "password"]
